@@ -75,18 +75,7 @@ public class NewsController {
 		}
 
 	}
-	@PutMapping("author/edit/{id}")
-	public void editNews(@PathVariable int id,@RequestPart("file") MultipartFile file, @RequestPart News news) throws IOException {
 
-		try {
-		     News newsOptional = newsService.findById(id).get();
-		    newsOptional.setImage(file.getBytes());
-			newsService.save(news);
-		} catch (Exception e) {
-			System.out.println("error");
-			log.debug("error in fileUpload " + e);
 
-		}
 
-	}
 }
